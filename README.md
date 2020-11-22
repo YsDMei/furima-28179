@@ -7,10 +7,10 @@
 | nickname           | string | null: false |
 | email              | string | null: false |
 | encrypted_password | string | null: false |
-| familyname         | string | null: false |
-| name               | string | null: false |
-| familyname_kana    | string | null: false |
-| name_kana          | string | null: false |
+| family_name        | string | null: false |
+| last_name          | string | null: false |
+| family_name_kana   | string | null: false |
+| last_name_kana     | string | null: false |
 | birthday           | date   | null: false |
 
 ### users Association
@@ -23,7 +23,7 @@
 | Column         | Type    | Options           |
 | -------------- | ------- | ----------------- |
 | user_id        | integer | foreign_key: true |
-| item_name      | string  | null: false       |
+| name           | string  | null: false       |
 | text           | text    | null: false       |
 | category_id    | integer | null: false       |
 | status_id      | integer | null: false       |
@@ -52,14 +52,15 @@
 
 ## shipping_addresses テーブル
 
-| Column       | Type    | Options           |
-| ------------ | ------- | ----------------- |
-| purchase_id  | integer | foreign_key: true |
-| postcode     | string  | null: false       |
-| municipality | string  | null: false       |
-| address      | string  | null: false       |
-| building     | string  |                   |
-| phonenumber  | string  | null: false       |
+| Column         | Type    | Options           |
+| -------------- | ------- | ----------------- |
+| purchase_id    | integer | foreign_key: true |
+| postcode       | string  | null: false       |
+| prefectures_id | integer | null: false       |
+| municipality   | string  | null: false       |
+| address        | string  | null: false       |
+| building       | string  |                   |
+| phonenumber    | string  | null: false       |
 
 ### shipping_addresses Association
 
